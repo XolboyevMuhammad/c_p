@@ -2,9 +2,11 @@ import streamlit as st
 import pandas as pd
 import pickle
 import numpy as np
+import joblib
 
 # Modelni yuklash
-model = pickle.load(open('computer_price_model.pkl', 'rb'))
+# model = pickle.load(open('computer_price_model.pkl', 'rb'))
+model = joblib.load('computer_price_model.pkl')
 
 # Nominal o'zgaruvchilar uchun label encoding
 brand_mapping = {'Dell': 0, 'HP': 1, 'Lenovo': 2, 'Asus': 3, 'Acer': 4, 'Apple': 5}
